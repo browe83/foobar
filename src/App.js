@@ -1,11 +1,17 @@
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Header from './components/Header';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
 
 function App() {
   return (
-    <div>
-      <h1>Foo</h1>
-      <h2>Bar</h2>
-    </div>
+    <Router>
+      <Header />
+      <Switch>
+        <Route exact path="/signin" component={SignIn} />
+        <Route exact path="/signup" component={SignUp} />
+      </Switch>
+    </Router>
   );
 }
 
